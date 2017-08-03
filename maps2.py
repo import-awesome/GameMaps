@@ -1,4 +1,3 @@
-import pygame
 Q = "Q"
 F = "."
 D = "D"
@@ -26,9 +25,9 @@ SU = "SU"
 SD = "SD"
 
 
-
+#dungeon 1, floor 1
 s1_f1 = [
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
+[F, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, F],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
@@ -38,11 +37,11 @@ s1_f1 = [
 [Q, Q, Q, Q, Q, W, F, F, F, W, F, W, F, W, F, W, W, F, F, W, F, F, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, D, W, W, Q, D, W, F, W, F, F, W, F, F, W, W, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q], 
 [Q, Q, Q, Q, Q, W, F, W, F, W, F, F, F, W, F, W, Q, W, F, W, W, W, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, W, F, D, F, W, F, W, W, W, F, F, D, F, F, D, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, W, F, W, F, W, F, W, W, W, F, F, D, F, F, D, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, W, F, W, F, F, F, W, F, W, F, W, Q, W, W, W, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, W, F, W, W, W, W, W, F, W, F, F, W, F, F, W, W, W, E, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, W, F, F, F, F, W, W, F, W, W, W, W, F, F, W, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, W, W, W, F, D, F, F, D, F, F, F, F, F, W, W, W, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, W, F, F, F, F, W, W, F, W, W, W, W, F, F, D, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, W, W, W, F, W, F, F, D, F, F, F, F, F, W, W, W, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, W, F, F, F, F, W, F, W, W, W, W, W, W, SD, W, F, W, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, W, F, W, W, F, W, F, W, F, F, F, W, W, W, W, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, W, F, F, F, F, W, F, W, F, F, F, F, F, W, F, F, W, W, E, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
@@ -57,13 +56,11 @@ s1_f1 = [
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q]
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, F, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q] ]
 
-]
 
 #dungeon 1, floor 2
 s1_f2 = [
-
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, W, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, W, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, W, SU, W, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
@@ -76,24 +73,59 @@ s1_f2 = [
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, F, F, F, W, F, F, F, F, F, W, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, Q, F, F, F, F, W, F, F, W, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, F, Q, F, W, W, W, W, W, F, W, F, F, F, Q, Q, F, W, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, F, Q, F, W, F, F, F, W, W, W, W, W, D, W, W, D, W, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, F, Q, F, W, F, F, F, D, W, W, W, W, D, W, W, D, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, F, F, F, W, F, F, F, F, F, F, F, W, F, F, F, F, W, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, D, W, W, W, F, W, F, W, W, F, W, W, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, F, D, W, F, F, W, F, W, F, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, W, W, F, W, F, W, W, F, W, W, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, F, F, W, F, F, W, F, W, F, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, Q, Q, Q, F, F, F, F, W, F, W, F, F, F, F, F, F, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, F, F, W, W, F, W, F, W, F, F, W, F, W, W, W, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, W, W, F, W, F, F, W, F, W, D, W, W, F, Q, Q, SD ,W, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, W, F, D, F, F, W, F, F, F, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, W, F, F, F, F, W, F, F, F, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, W, W, W, W, W, W, W, F, F, F, W, F, Q, Q, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, W, W, F, F, F, F, F, W, W, W, F, W, F, F, F, F, W, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, W, F, F, F, F, F, W, F, F, F, W, W, W, W, W, W, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, D, F, F, F, F, F, D, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
-[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, W, W, W, D, W, W, W, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, F, F, F, F, F, F, F, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
+[Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, F, F, W, W, W, F, W, W, W, F, F, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, W, W, W, W, Q, W, F, W, Q, W, W, W, W, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, F, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q] ]
+
+
+#dungeon 1, floor 3
+s1_f3 = [
+[QQWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWQQ],
+[QQWFWFFFFFFFFFFFFFFFFFFFFFFFFFWFWQQ],
+[QWWFWFWFWFWWWWWWWWWWWWWWWFWFWFWFWQQ],
+[WFWFFFWFWFWFFFFFFFFFFFFFWFWFWFFFWFW],
+[WFFFWFWFWFWFFFWWWWWWWFFFWFWFWFWFFFW],
+[WWFWWWWFWFWFFFWFFFFFWFFFWFWFWWWWWWW],
+[WFFFFFWFWFWFFFWFWSDWFWFFFWFWFWFFFFFW],
+[WFFWFWWFWFWFFFWFWFWFWFFFWFWFWWFWFFW],
+[WFFWFFWFWFWFFFWFFFFFWFFFWFWFWFFWFFW],
+[WFFWFFWFWFWFFFFFFFFFFFFFWFWFWFFWFFW],
+[WFFWFFWFWWWWWWWWWDWWWWWWWWWFWFFWFFW],
+[WFFWFFWFFFFFFFWFFFFFWFFFFFFFWFFWFFW],
+[WFWWWWWWWWWWFWWFFFFFWWFWWWWWWFFWWFW],
+[WFWFFFWFFFFFFFWFFFFFWFFFFFFFFFFFWFW],
+[WFWWWWWWWWWWWWWFFFFFWWWWWWWWWWWWWFW],
+[WFWWFFFFFFFFFFWFFFFFWFFFFFFFFFFWWFW],
+[WFWWFWWWWWWWWFWFFFFFWFWWWWWWWWFWWFW],
+[WFFFFWFFFFFFFFWFFFFFWFFFFFFFFWFFFFW],
+[WWWWWWWWFWWWWWWFFFFFWWWWWWFWWWWWWWW],
+[WFFFFFFFFFWFFFWFFFFFWFFFWFFFFFFFFFW],
+[WWFWWWWWWWWFWFWFFFFFWFWFWWWWWWWWFWW],
+[WFFFFFFFWFWFWFWFFFFFWFWFWFWFFFFFFFW],
+[WWWWWWWFWFWFWFWFFFFFWFWFWFWFWWWWWWW],
+[WFFFFFWFWFFFWFWFFFFFWFWFFFWFWFFFFFW],
+[WWWWWFWFWFWFWFWFFFFFWFWFWFWFWFWWWWW],
+[WFFFWFWFWFWFWFWFFFFFWFWFWFWFWFWFFFW],
+[WFWFWFFFWFWFWFWFFFFFWFWFWFWFFFWFWSUW],
+[WWWFFFWWWFWWWFWFFFFFWFWWWFWWWFFFWWW],
+[QQWFWFFFFFWFFFFFFFFFWFFFWFFFFFWFWQQ],
+[QQWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWQQ]]
+
 
 #dungeon 1, floor 4
 s1_f4 = [
@@ -128,4 +160,4 @@ s1_f4 = [
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, SU,W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q],
 [Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, W, W, W, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q, Q] ]
 
-allmaps = [[s1_f1, s1_f2, s1_f4], []]
+allmaps = [s1_f1, s1_f2, s1_f4]
